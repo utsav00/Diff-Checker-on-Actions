@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo "Here"
       - uses: utsav00/actions/dist/translations_diff@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "Over"
