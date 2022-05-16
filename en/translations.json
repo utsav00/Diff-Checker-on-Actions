@@ -4,5 +4,6 @@
         "nKey1": "some",
         "nKey2": "string"
     },
-    "key3": "value3"
+    "key3": "value3",
+    "key4": "value4"
 }
