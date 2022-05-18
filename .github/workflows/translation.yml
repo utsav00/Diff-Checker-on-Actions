@@ -11,4 +11,5 @@ jobs:
       - uses: utsav00/actions/dist/translations_diff@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          base-branch: ${{ github.head_ref }}
       - run: echo "Over"
