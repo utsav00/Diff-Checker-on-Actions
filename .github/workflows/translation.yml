@@ -13,4 +13,5 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           base-branch: ${{ github.head_ref }}
           target-branch: ${{ github.base_ref }}
+          langs: 'de, es, fr, pt'
       - run: echo "Over"
