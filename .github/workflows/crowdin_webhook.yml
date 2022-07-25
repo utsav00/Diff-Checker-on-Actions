@@ -1,3 +1,5 @@
+name: Crowdin notifs test
+
 on:
   # publish blog using webhook
   repository_dispatch:
