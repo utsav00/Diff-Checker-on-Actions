@@ -1,17 +1,13 @@
 name: Translations diff check
 
-on: [pull_request]
+on:
+  pull_request:
+    branches-ignore:
+      - 'feat/check1'
 
 jobs:
   translation-check:
     runs-on: ubuntu-latest
-
-    if: always() && !contains('
-      refs/heads/dev
-      refs/heads/staging
-      refs/heads/production
-      ', github.ref
-      )
 
     steps:
       - run: echo "Here"
