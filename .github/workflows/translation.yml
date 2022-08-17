@@ -1,9 +1,14 @@
 name: Translations diff check
 
 on:
-  pull_request:
+#  pull_request:
+#    branches-ignore:
+#      - 'feat/check1'
+  push:
+    branches:
+      - 'feat/*'
     branches-ignore:
-      - 'feat/check1'
+      - 'feat/branched-from-check1'
 
 jobs:
   translation-check:
