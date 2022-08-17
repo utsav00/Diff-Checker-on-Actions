@@ -6,12 +6,19 @@ jobs:
   translation-check:
     runs-on: ubuntu-latest
 
+    if: always() && !contains('
+      refs/heads/dev
+      refs/heads/staging
+      refs/heads/production
+      ', github.ref
+      )
+
     steps:
       - run: echo "Here"
-      - uses: utsav00/actions/dist/translations_diff@master
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-branch: ${{ github.head_ref }}
-          target-branch: ${{ github.base_ref }}
-          langs: 'de, es, fr, pt'
+#      - uses: utsav00/actions/dist/translations_diff@master
+#        with:
+#          repo-token: ${{ secrets.GITHUB_TOKEN }}
+#          base-branch: ${{ github.head_ref }}
+#          target-branch: ${{ github.base_ref }}
+#          langs: 'de, es, fr, pt'
       - run: echo "Over"
