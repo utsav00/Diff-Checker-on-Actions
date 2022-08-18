@@ -1,6 +1,12 @@
 name: Translations diff check
 
-on: [pull_request]
+on:
+#  pull_request:
+#    branches-ignore:
+#      - 'feat/check1'
+  push:
+    branches:
+      - 'feat/*'
 
 jobs:
   translation-check:
@@ -11,7 +17,6 @@ jobs:
       - uses: utsav00/actions/dist/translations_diff@master
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-branch: ${{ github.head_ref }}
-          target-branch: ${{ github.base_ref }}
+          base-branch: ${{ github.ref_name }}
           langs: 'de, es, fr, pt'
       - run: echo "Over"
