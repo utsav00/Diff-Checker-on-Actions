@@ -1,0 +1,12 @@
+name: Crowdin Notification Listener
+
+on:
+  repository_dispatch:
+    types: [create_crowdin_task]
+
+jobs:
+  crowdin_webhook_trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Workflow triggered"
