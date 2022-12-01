@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Workflow triggered"
+      - name: Payload
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
