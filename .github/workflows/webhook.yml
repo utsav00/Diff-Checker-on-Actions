@@ -16,4 +16,4 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           base-branch: ${{ github.head_ref }}
-          github_content: ${{ GITHUB_CONTEXT }}
+          github_content: ${{ github.custom_payload }}
