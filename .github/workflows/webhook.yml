@@ -14,4 +14,4 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
-          github_context: ${{ secrets.GITHUB_TOKEN }}
+          github_context: ${{ toJson(github.event.client_payload) }}
