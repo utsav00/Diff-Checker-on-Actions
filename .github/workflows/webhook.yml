@@ -11,9 +11,7 @@ jobs:
     steps:
       - name: Payload
         uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           base-branch: ${{ github.head_ref }}
-          github_context: ${{ github.custom_payload }}
+          github_context: ${{ github }}
