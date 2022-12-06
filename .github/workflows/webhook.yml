@@ -13,5 +13,5 @@ jobs:
         uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-branch: ${{ github.head_ref }}
-          github_context: ${{ github.head_ref }}
+          crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
+          github_context: ${{ secrets.GITHUB_TOKEN }}
