@@ -1,0 +1,22 @@
+name: Crowdin Notification Listener
+
+on:
+  repository_dispatch:
+    types: [create_crowdin_task]
+
+jobs:
+  test_run:
+    - name: Check the status of the job
+      run: echo "This is indeed being triggered"
+
+  crowdin_webhook_trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Payload
+        uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          head-branch : ${{ github.head_ref }}
+          crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
+          github_context: ${{ toJson(github.event.client_payload) }}
