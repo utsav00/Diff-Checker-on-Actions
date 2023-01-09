@@ -5,14 +5,12 @@ on:
     types: [create_crowdin_task]
 
 jobs:
-  test_run:
-    - name: Check the status of the job
-      run: echo "This is indeed being triggered"
-
   crowdin_webhook_trigger:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Trigger Message
+        run: echo "Workflow is being triggered"
       - name: Payload
         uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
         with:
