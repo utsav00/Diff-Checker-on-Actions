@@ -15,4 +15,4 @@ jobs:
             crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
             github_context: ${{ toJson(github.event.client_payload) }}
 
-        - run: echo "Triggered"
+        - run: echo "On Another Branch"
