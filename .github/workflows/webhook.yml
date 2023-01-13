@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - name: Payload
+        run: echo "Triggered"
         uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
