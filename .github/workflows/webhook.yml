@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Payload
-        run: echo "Triggered"
-        uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
-          github_context: ${{ toJson(github.event.client_payload) }}
+        - uses: SpringCare/actions/dist/create_crowdin_task@feature/GT-47-crowdin-webhook-trigger
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            crowdin-token: ${{ secrets.CROWDIN_TOKEN }}
+            github_context: ${{ toJson(github.event.client_payload) }}
+
+        - run: echo "Triggered"
